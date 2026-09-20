@@ -1,0 +1,160 @@
+{
+  "project_name": "PayMitra HRMS & Payroll SaaS",
+  "app_type": "hybrid_fullstack",
+  "design_archetype": "ARCHETYPE 1 & 4 FUSION: Soft Fintech & Precision Swiss (Indian SMB Tailored)",
+  "target_audience": "Indian Small & Medium Business Owners (Khata/PagarBook style simplicity) & Employees on Smartphones",
+  "locale": "en-IN (India / INR ₹ currency format)",
+  "theme": {
+    "default_mode": "light",
+    "supported_modes": ["light", "dark"],
+    "brand_identity": "Trustworthy Emerald & Deep Sapphire Fintech with Warm Sand Canvas"
+  },
+  "typography": {
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "DM Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap",
+    "anti_default_rule": "PROHIBITED from using Inter or Roboto for Main Headings or Section Headers. Main headings must use 'Outfit' with tight letter spacing.",
+    "hierarchy": {
+      "h1_hero": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-none",
+      "h2_section": "text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900",
+      "h3_subsection": "text-lg sm:text-xl font-semibold text-slate-800",
+      "h4_card_title": "text-base sm:text-lg font-semibold text-slate-800",
+      "body": "text-sm sm:text-base leading-relaxed text-slate-600",
+      "caption": "text-xs font-medium text-slate-500 tracking-wide uppercase"
+    }
+  },
+  "colors": {
+    "primary": {
+      "emerald_600": "#059669",
+      "emerald_700": "#047857",
+      "emerald_800": "#065f46",
+      "emerald_light": "#ecfdf5"
+    },
+    "brand_navy": {
+      "navy_900": "#0f172a",
+      "navy_800": "#1e293b",
+      "navy_700": "#334155"
+    },
+    "accents": {
+      "saffron_gold": "#d97706",
+      "saffron_bg": "#fffbeb",
+      "slate_blue": "#2563eb",
+      "slate_blue_bg": "#eff6ff",
+      "crimson_alert": "#dc2626",
+      "crimson_bg": "#fef2f2"
+    },
+    "neutrals_light": {
+      "bg_main": "#f8fafc",
+      "card_bg": "#ffffff",
+      "surface_muted": "#f1f5f9",
+      "border_light": "#e2e8f0",
+      "text_primary": "#0f172a",
+      "text_secondary": "#475569",
+      "text_muted": "#64748b"
+    },
+    "neutrals_dark": {
+      "bg_main": "#0b0f17",
+      "card_bg": "#151c28",
+      "surface_muted": "#1e293b",
+      "border_dark": "#2d3748",
+      "text_primary": "#f8fafc",
+      "text_secondary": "#cbd5e1",
+      "text_muted": "#94a3b8"
+    },
+    "status_pills": {
+      "present": "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800",
+      "absent": "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800",
+      "half_day": "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800",
+      "pending": "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800",
+      "overtime": "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800"
+    }
+  },
+  "layout_patterns": {
+    "mobile_first_philosophy": "Every screen must render seamlessly on a 360px wide phone viewport (single column grid, fixed bottom mobile navigation, thumb-friendly tap targets min 44px).",
+    "owner_portal": {
+      "nav_structure": "Top company selector pill + quick notifications + profile avatar. Bottom navigation bar on mobile (Dashboard, Attendance, Directory, Payroll, More). Sidebar layout on desktop.",
+      "hero_widget": "Owner Summary Deck: Headcount active, Today's Present/Absent/Late counts, Monthly Payroll liability in ₹, Pending Leave Approvals queue counter.",
+      "grid_mode": "Bento density grid (col-span-1 for summary KPIs, col-span-2 or 3 for salary trends/attendance bar charts)."
+    },
+    "employee_portal": {
+      "nav_structure": "Simplified bottom nav bar for mobile (Home, Self Check-in, Leave, Payslips).",
+      "hero_widget": "Big Actionable 'Punch In / Punch Out' Card with Real-time Clock, GPS location status badge, and Camera selfie preview overlay.",
+      "quick_stats": "Leaves Remaining gauge, Monthly Attendance summary progress bar, Latest Payslip quick view button."
+    }
+  },
+  "key_features_and_ui_specs": {
+    "multi_company_switch": {
+      "component": "Shadcn DropdownMenu / Select with company logo avatar, GSTIN sub-label, and 'Add New Business' action.",
+      "data_testid": "company-switcher-dropdown"
+    },
+    "attendance_facial_and_gps": {
+      "selfie_capture_modal": "Live video canvas stream with oval face guide overlay, geotagged location indicator (Latitude, Longitude & Address name), and one-tap 'Confirm Selfie Punch' button.",
+      "geofence_status": "Pill badge displaying 'Inside Office Geofence (10m radius)' in green or 'Remote / Field Location' in amber."
+    },
+    "employee_directory_csv": {
+      "features": "Search by name/department/role, view filter toggles (Active/Resigned/Contract), CSV bulk upload modal with dropzone and column mapper preview table.",
+      "data_testid_upload": "employee-csv-upload-dropzone"
+    },
+    "payroll_engine_india": {
+      "compliance_components": "Explicit breakdowns for PF (Provident Fund @ 12%), ESI (Employees' State Insurance), PT (Professional Tax by state), and TDS (Tax Deducted at Source).",
+      "run_payroll_stepper": "3-step Wizard: 1. Review Attendance & Lop (Loss of Pay), 2. Preview Salary Structure & Adjustments/Bonuses, 3. One-click Approve & Mark Paid with Bank Transfer / UPI Export log."
+    },
+    "payslip_pdf_generation": {
+      "view": "Mobile & Desktop print-ready HTML/PDF preview modal complete with company header, employee UAN/ESI numbers, itemized earnings/deductions table, net payable in INR words, and downloadable PDF action button."
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80",
+    "tactile_cards": "rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200",
+    "gradient_accents": "Avoid dark color full gradients. Use subtle highlight accents like 'bg-gradient-to-r from-emerald-500 to-teal-600' strictly on primary CTA buttons or subtle top accent borders."
+  },
+  "image_urls": [
+    {
+      "category": "team_collaborative",
+      "url": "https://images.unsplash.com/photo-1781246212288-7fa538344718?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHdvcmtpbmclMjBsYXB0b3AlMjB0ZWFtJTIwb2ZmaWNlfGVufDB8fHx8MTc8OTkzMjU0NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Six Indian business colleagues in an office meeting collaborating on laptops"
+    },
+    {
+      "category": "owner_dashboard_hero",
+      "url": "https://images.unsplash.com/photo-1737573477556-ac3ed2db618c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHxfHxpbmRpYW4lMjBidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHdvcmtpbmclMjBsYXB0b3AlMjB0ZWFtJTIwb2ZmaWNlfGVufDB8fHx8MTc4OTkzMjU0NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Indian business founder using laptop for HR management"
+    },
+    {
+      "category": "employee_avatar_1",
+      "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=srgb&fm=jpg&q=85&w=200",
+      "description": "Female employee avatar photo"
+    },
+    {
+      "category": "employee_avatar_2",
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85&w=200",
+      "description": "Male employee avatar photo"
+    }
+  ],
+  "motion": {
+    "library": "framer-motion (already available in package dependencies)",
+    "micro_interactions": "Smooth active press scales on buttons (whileTap={{ scale: 0.98 }}), slide-up drawer entrance for mobile modals, hover soft lift (-translate-y-0.5) on stats cards.",
+    "accessibility": "Always enforce prefers-reduced-motion safety."
+  },
+  "testing_and_data_testids": {
+    "rule": "ALL interactive buttons, inputs, tabs, modals, and key financial metric text containers MUST feature unique kebab-case data-testid attributes.",
+    "examples": [
+      "data-testid=\"login-owner-tab\"",
+      "data-testid=\"login-employee-tab\"",
+      "data-testid=\"owner-headcount-stat\"",
+      "data-testid=\"punch-in-button\"",
+      "data-testid=\"run-payroll-button\"",
+      "data-testid=\"employee-directory-table\"",
+      "data-testid=\"leave-approve-button\"",
+      "data-testid=\"download-payslip-pdf-button\""
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": {
+    "1": "DO NOT use generic centered text or default Inter font for headlines. Use Google Font Outfit for headings and DM Sans for body.",
+    "2": "All inputs and form controls must use Shadcn primitive components (Select, Checkbox, RadioGroup, Dialog, Sheet, Tabs, Switch, Table, Input).",
+    "3": "Always display currency amounts formatted in Indian Rupees (₹) with proper Indian numbering system (e.g. ₹1,50,000 instead of ₹150,000).",
+    "4": "Ensure full responsiveness on mobile viewports (360px+) with fixed bottom tab bar navigation for mobile devices.",
+    "5": "Provide seamless switching between Owner/Admin mode and Employee mode with quick demo toggle for easy testing.",
+    "6": "Use Sonner for toast notifications on success/error actions (e.g. 'Attendance marked successfully', 'Payroll generated for July 2026')."
+  }
+}
